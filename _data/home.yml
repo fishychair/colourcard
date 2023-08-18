@@ -8,9 +8,10 @@ navbar_entries:
 project_entries:
   - title: Colour Card
     url: colour-card-docs
+    image: esp32s3.jpg
     desc: Colour card
 
-  - title: ESP32S3 Dev Board
+  - title: ESP32S3 Dev Boards
     url: esp32-s3-m-docs
     desc: ESP32S3 Dev Board
 
