@@ -2,30 +2,22 @@ navbar_entries:
   - title: about
     url: about
 
-  - title: posts
-    url: blog
-
   - title: store
     url: https://fishychair.github.io/
 
 project_entries:
   - title: Colour Card
-    url: overview-post
-    desc: This is an example project, configured in _data/home.yml
+    url: colour-card-docs
+    desc: Colour card
 
   - title: ESP32S3 Dev Board
-    url: overview-post
-    desc: Projects are shown in card layout
+    url: esp32-s3-m-docs
+    desc: ESP32S3 Dev Board
 
-#old_project_entries:
-  #- title: First post!
-  #  url: https://www.soopr.co
-  #  desc: Delight your readers - add beautiful share and like buttons easily to your websites 
-  #  highlight: NEW
 
 footer_entries:
   - title: store
-    url: https://fishychair.github.io/
+    url: https://fishychair.company.site/
 
   - title: twitter
     url: https://twitter.com/fishychair
@@ -36,36 +28,5 @@ footer_entries:
   #- title: feed
   #  url: feed.xml
 
-misc_entries:
-  - title: this is an example vertical list
-    url: false
-
-  - title: you can show or hide using a boolean flag in _config.yml
-    url: false
-
-  - title: and you can add data in _data/home.yml
-    url: false
-
-  - title: Blog posts
-    post_list: true
-    url: false
-
-  - title: moonwalk on the Internet
-    url: false
-    entries:
-      - title: on Github
-        url: https://github.com/abhinavs/moonwalk
-
-      - title: originally built for abhinav's homepage
-        url: https://www.abhinav.co
-
-      - title: this list is scalable and can be nested
-        url: false
-        entries:
-          - title: this is nested inside a nested list
-            url: false
-
-          - title: it is easy to use, see _data/home.yml to see how to configure it.
-            url: false
 
 

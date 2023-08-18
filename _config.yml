@@ -1,9 +1,8 @@
-title: Moonwalk
-author: Abhinav Saxena
-url: https://www.abhinavsaxena.com/moonwalk # root address of the site
+title: fishychair
+author: fishychair
+url: https://fishychair.github.io/
 description: > # description of the site (multiple lines allowed)
-  Moonwalk is a fast and elegant Jekyll theme with a clean dark mode. It comes with horizontal list (for navbar and footer), card list (for portfolio), and a generic vertical list. It is very easy to modify in case you want to build over it - please see _layouts/home.html to do that.
-
+  fishychair website
 permalink: /:slug
 
 favicon: "./logo.png" # relative path to site's favicon
@@ -41,10 +40,8 @@ theme_config:
 soopr:
   publish_token: "" # sign up at https://www.soopr.co to get your publish token and personalize share and reaction options
 
-markdown: kramdown
-
 highlighter: rouge
-    input: GFM
+
 sass:
   style: :compressed
 
