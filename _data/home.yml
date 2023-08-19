@@ -12,7 +12,7 @@ project_entries:
     desc: Colour card
 
   - title: ESP32S3 Dev Boards
-    url: esp32-s3-m-docs
+    url: _layouts/esp32-s3-m-docs
     desc: ESP32S3 Dev Board
 
 
