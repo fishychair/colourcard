@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en" class="html" data-theme="dark"><head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>
+      Colour Card Documentation
+  </title>
+
+  <!-- Begin Jekyll SEO tag v2.7.3 -->
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="ESP32-S3" />
+<meta name="author" content="fishychair" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="ESP32 S3 ESP32S3 ESP32-S3-MINI ESP-32-S3 &#8617;" />
+<meta property="og:description" content="ESP32 S3 ESP32S3 ESP32-S3-MINI ESP-32-S3 &#8617;" />
+<link rel="canonical" href="http://localhost:4000/esp32-s3-m-docs" />
+<meta property="og:url" content="http://localhost:4000/esp32-s3-m-docs" />
+<meta property="og:site_name" content="fishychair" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-07-19T00:00:00+10:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="esp32-s3" />
+<meta name="twitter:site" content="@fishychair" />
+<meta name="twitter:creator" content="@fishychair" />
+<script type="application/ld+json">
+{"headline":"ESP32-S3","dateModified":"2020-07-07T00:00:00+10:00","datePublished":"2020-07-07T00:00:00+10:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/overview-post"},"author":{"@type":"Person","name":"Abhinav Saxena"},"url":"http://localhost:4000/overview-post","@type":"BlogPosting","description":"Lorem ipsum1 dolor sit amet, consectetur adipiscing elit. Pellentesque vel lacinia neque. Praesent nulla quam, ullamcorper in sollicitudin ac, molestie sed justo. Cras aliquam, sapien id consectetur accumsan, augue magna faucibus ex, ut ultricies turpis tortor vel ante. In at rutrum tellus. this is a footnote. You should reach here if you click on the corresponding superscript number. &#8617;","@context":"https://schema.org"}</script>
+<script async defer data-soopr-token="" src="https://sdk.soopr.co/soopr.js"  ></script>
+<script type="text/javascript">
+  function InitCopyPaste(){
+    const codeBlocks = document.querySelectorAll("div.highlighter-rouge");
+
+    codeBlocks.forEach((codeblock, index) => {
+      const code = codeBlocks[index].innerText;
+      const copyCodeButton = document.createElement("button");
+      copyCodeButton.innerHTML = "❐";
+      copyCodeButton.classList = "btn btn-sm btn-outline-primary";
+      // insert a copy button
+      copyCodeButton.onclick = function () {
+        window.navigator.clipboard.writeText(code);
+        copyCodeButton.innerHTML = "❏";
+        copyCodeButton.classList.add("btn-success");
+        copyCodeButton.classList.remove("btn-outline-primary");
+
+        setTimeout(() => {
+          copyCodeButton.innerHTML = "❐";
+          copyCodeButton.classList.remove("btn-success");
+          copyCodeButton.classList.add("btn-outline-primary");
+        }, 200);
+      };
+      // make the button
+      codeblock.appendChild(copyCodeButton);
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", InitCopyPaste);
+</script>
+<link rel="stylesheet" href="assets/css/prism.css">
+<style media="screen">
+  div.highlighter-rouge {
+    position: relative;
+  }
+
+  div.highlighter-rouge button {
+    color: #f2f0e0;
+    font-size: 20px;
+    border-radius: 6px;
+    border-style: none;
+    border-color: #f2f0e0;
+    position: absolute;
+    top: 12px;
+    right: 13px;
+    background-color: #1a1f35;
+    cursor:pointer
+  }
+</style>
+<style>
+  .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 5px;
+}
+
+.firstimage {
+  padding-left: 50px;
+  width: 250px;
+}
+.bulletpoints {
+  width: 320px;
+}
+  </style>
+
+<!-- End Jekyll SEO tag -->
+
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Moonwalk" />
+
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/assets/images/favicon/site.webmanifest">
+  <link rel="mask-icon" href="/assets/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="/assets/images/favicon/favicon.ico">
+  <meta name="msapplication-TileColor" content="#00aba9">
+  <meta name="msapplication-config" content="/assets/images/favicon/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+  <!-- Favicon -->
+
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  
+    <script type="text/javascript">
+  window.addEventListener('load', themeChange);
+  const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+  if (currentTheme)
+    document.documentElement.setAttribute('data-theme', currentTheme);
+
+  function themeChange() {
+    let button = document.querySelector('.theme-toggle');
+
+    button.addEventListener('click', function (e) {
+      let currentTheme = document.documentElement.getAttribute('data-theme');
+      if (currentTheme === 'dark') {
+        transition();
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+      } else {
+        transition();
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+      }
+    });
+
+    let transition = () => {
+      document.documentElement.classList.add('transition');
+      window.setTimeout(() => {
+        document.documentElement.classList.remove('transition');
+      }, 1000);
+    }
+  }
+</script>
+
+
+  
+</head>
+<body>
+    <main class="page-content" aria-label="Content">
+      <div class="w">
+        <a href="/">back</a>
+<h1 class="post-title">Colour Card</h1>
+<p class="post-date text-bold">
+    <span class="text-upcase">fishychair</span> / 
+    <span class="text-upcase">August 2023</span>
+
+
+</p>
+
+
+
+
+<p>The Colour Card is a credit card sized board with a 16×9 array of WS2816C LEDs. 
+  It also comes with onboard light and temperature/humidity sensors, all powered by an ESP32.
+</p>
+<p>The WS2816C RGB LEDs can display over 281 trillion different colours per pixel (65536 steps per colour channel).</p>
+<p>The vast majority of consumer devices can only show around 16 million (256 steps per R/G/B). </p>
+<p>This might sound overkill but the difference is extremely noticeable at lower brightness levels.</p>
+
+<div class="container">
+  <div class ="bulletpoints">
+    <ul>
+      <li>Powered by an ESP32 SoC</li>
+      <li>Array is composed of WS2816C, 16-bit RGB LEDs.</li>
+      <li>BH1721 16-bit ambient light sensor connected via I2C</li>
+      <li>SHTC3 temperature + humidity sensor connected via I2C</li>
+      <li>ESD and overcurrent protection (1.5A)</li>
+      <li>1× push button connected to GPIO 4</li>
+    </ul>
+  </div>
+  <div class="firstimage">
+    <img src="/assets/images/cc vert.jpg">
+  </div>
+</div>
+
+<h3 id="esp-cap">What can you do with this board?</h3>
+<p>The colour card is a device perfect for displaying data, patterns or art. </p>
+<p>Since the board has WiFi and Bluetooth capabilities, you can pull data from the internet or smart home devices and control/display that data accordingly.</p>
+
+<h3 id="esp-caps">How do you tell it what to do?</h3>  
+<p>You can tell the colour card what to do by coding it with the Arduino IDE. The code is very simple to start with and is 
+  extremely beginner friendly.
+</p>
+
+  
+
+
+
+<h2 id="esp-started">Getting Started</h2>
+
+<p>The dev board can be programmed using the Arduino IDE with the appropriate board library installed. Advanced users can opt to use Platform IO instead.</p>
+
+<h3 id="esp-s1">Step 1: Installing Arduino IDE</h3>
+
+<p>Install Arduino IDE from the link below. IDE 2.x has not been tested, I personally use IDE 1.8 legacy. </p>
+
+<a href="https://www.arduino.cc/en/software">Arduino IDE download</a>
+
+<h3 id="esp-s2">Step 2: Installing ESP32 package</h3>
+
+<p>Copy this text below:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://espressif.github.io/arduino-esp32/package_esp32_index.json;
+</code></pre></div></div>
+
+
+
+<p>Start Arduino IDE and go to File > Preferences.</p>
+<p>Paste it in the "Additional Boards Manager URL" text box as shown below.</p>
+<p><img src="assets\images\preferences.jpg" alt="pref photo" /></p>
+<p>In Tools > Board > Board Manager, search for "esp32" and install the one by Espressif Systems as shown below.</p>
+<p><img src="assets\images\board manager.jpg" alt="board manager photo" /></p>
+<p>Now you can select the ESP32 Dev Module under the ESP Arduino category.</p>
+<p><img src="assets\images\esp32 select.JPG" alt="select board photo" /></p>
+
+<h3 id="esp-s3">Step 3: Installing NeoPixelBus library</h3>
+
+<p>The NeoPixelBus library by Makuna is necessary to control the WS2816C LEDs.</p>
+
+<a href="https://github.com/Makuna/NeoPixelBus">Install here. </a>
+
+<h3 id="esp-s4">Step 4: Uploading code</h3>
+
+<p>Now that we have everything set up, we can upload some code to verify everything is working.</p>
+
+<p>Copy and paste the code into the IDE and click the upload button. The Arduino IDE will compile and upload the code.</p>
+<p>Make sure you have selected the correct serial port via Tools > Port.</p>
+<div class="language-C highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/* Example code for starting with with colour card
+*  
+* Sends a test pixel to every LED.
+* Written by fishchair 17/8/2023
+*/
+
+#include &#60;NeoPixelBus.h>
+
+
+const int pixelpin = 23;          // pixel data pin is connected to GPIO 23
+const int pixelcount = 144;       // 144 total LEDs on board
+
+
+const Rgb48Color defined_colour(150, 100, 0); // define a dim orange colour
+const Rgb48Color black(0);                    // define black
+
+NeoPixelBus<NeoGrbWs2816Feature, NeoWs2816Method> strip(pixelcount, pixelpin); 
+
+void setup()
+{
+  strip.Begin(); // initalise strip
+}
+
+void loop()
+{
+  for (int i = 0; i < pixelcount; i++) { // create for loop
+    if (i == 0) { // if first pixel, wrap around and
+      strip.SetPixelColor(pixelcount - 1, black); // turn off last pixel
+    }
+    else { // otherwise if any other pixel
+      strip.SetPixelColor(i - 1, black); // turn off previous pixel
+    }
+    strip.SetPixelColor(i, defined_colour); // set current pixel colour
+    strip.Show(); // update strip
+  }
+}</code></pre></div></div>
+
+<p>After a successful upload, you should see the an LED scanning across the board.</p>
+
+
+
+
+
+
+
+
+
+
+
+<h2 id="esp-e2">Example 2</h2>
+<p>This second example is much more complex and is the original code that comes on the board.</p>
+<p>Automatic brightness adjustment functions are implemented.</p>
+
+<div class="language-C highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/* Default colour card code
+* 
+* Mode button toggles between mode 1 and 2.
+* Mode 1 runs a wrap-around simulation of the Game of Life
+* Mode 2 displays a twinkling Starry Night
+*/
+
+#include &#60;NeoPixelBus.h>
+#include &#60;Wire.h>
+
+const int BH1721_ADDR = 0x23;
+
+long lastMillis = 0;
+long loops = 0;
+
+#define light_poll_delay 120            // must be > 120 for sensor to get reading correctly
+#define ref_gol_dimming_ratio 20000
+#define image_dimming_ratio 8000        // 0-65535. higher = brighter
+
+uint16_t gol_dimming_ratio = 10000;     // 0-65535. higher = brighter
+uint16_t current_light_level = 0;
+uint16_t scaled_light_level;
+#define sparkling_speed_h 4             // high end of sparkle speed
+#define sparkling_speed_l 1             // low end of sparkle speed
+#define sparkling_range_h 170           // 0-255
+#define sparkling_range_l 0             // currently does nothing
+#define s_chance 20                     // chance from 0-100% (higher is more likely to spawn sparkle)
+#define min_brightness 100               // 30 is good too
+
+const int width = 16;
+const int height = 9;
+const int arraySize = width * height;
+int gol_array[height][width];
+int gol_next_array[height][width];
+int gol_age[arraySize];
+
+int sparkle_dir[arraySize]; // -1 = still. 0-127 = up. 128-255 = down.
+int sparkle_lvl[arraySize];  //(12288, 54528, 51200);
+
+int wave_array[width];
+
+unsigned long previous_light_reading = 0;
+Rgb48Color old_gol_clr_array[arraySize];
+Rgb48Color new_gol_clr_array[arraySize];
+Rgb48Color white = (65535);
+Rgb48Color black = (0);
+
+const Rgb48Color gol_live_color(255 * 256, 80 * 256, 2 * 256);
+const Rgb48Color gol_dead_color(0, 0, 0);
+const Rgb48Color gol_old_color(0, 180 * 256, 205 * 256);
+const Rgb48Color text_color(195, 22, 255);
+
+
+unsigned long current_time = 0;
+const unsigned long goldelay = 440;             // ms between each GOL cycle
+const unsigned aging_speed = 50;                 // how quickly cells in GOL age (1-255) higher is faster aging
+
+
+const uint16_t pixelcount = 144;                 // # of LEDs in matrix
+const uint16_t pixelpin = 23;                    // WS2816 data out pin
+const uint16_t switchpin = 4;                    // pause button pin
+
+
+const unsigned long debounceDelay = 500;         // the debounce time; increase if the output flickers
+const int mode_num = 2;                          // # of modes
+bool setup_flag = 1;                             // 0 = already setup, 1 = need to setup
+
+
+int active_mode = 1; // starting mode
+unsigned long lastDebounceTime = 0;  // the last time the output pin was toggled
+unsigned long lastgoltime = 0;  // the last time GOL finished a cycle
+
+NeoGamma&#60;NeoGammaTableMethod> colorGamma; // for any fade animations, best to correct gamma
+NeoPixelBus&#60;NeoGrbWs2816Feature, NeoWs2816Method> strip(pixelcount, pixelpin);
+
+HtmlColor starry_night[] PROGMEM  = {
+  0x243266, 0x72808d, 0x49556d, 0x24325e, 0x344175, 0x505e82, 0x47587c, 0x3a4a79, 0x2c3b80, 0x5e6975, 0x485674, 0x25337b, 0x455a8b, 0x73868c, 0x7f9386, 0x7b868c,
+  0x4b608a, 0x2c3d8b, 0x213476, 0x5a5c59, 0x445989, 0x384f93, 0x536981, 0x4d5b81, 0x445588, 0x596f89, 0x536a78, 0x495b8b, 0x5a7ab1, 0xc9ca62, 0xeed032, 0xb6bf8a,
+  0x708799, 0x5a6c96, 0x3f557e, 0x546779, 0x7994a9, 0x617886, 0x556b83, 0x5f7896, 0x6e86a6, 0x53699b, 0x4a5d85, 0x6d879c, 0x4968a0, 0x768a8b, 0x8c9874, 0x778a88,
+  0x6e8492, 0x7c9bb7, 0x58655a, 0x2d343e, 0x476486, 0x45658b, 0x6379a1, 0x5d7497, 0x587198, 0x647998, 0x4c638d, 0x4b6595, 0x44659a, 0x4f73b1, 0x6d91c2, 0x96abac,
+  0x566b83, 0x597b9e, 0x434739, 0x060f11, 0x577195, 0xb2beb0, 0x8397a2, 0x486590, 0x4b648c, 0x527190, 0x7895a7, 0x768ca4, 0x7b96a1, 0x9db6a2, 0x7c887a, 0x706c5e,
+  0x748687, 0x6c90b2, 0x2d3a4b, 0x0c0c05, 0x475361, 0xa4aea6, 0x82979c, 0x5b768c, 0x627c90, 0x546d82, 0x59677c, 0x607286, 0x617482, 0x515f7c, 0x2c3f6e, 0x2b3059,
+  0x4b5966, 0x48648f, 0x334048, 0x171509, 0x16190d, 0x222f39, 0x304568, 0x3b4d6a, 0x465773, 0x374974, 0x253764, 0x28385b, 0x2b3a5e, 0x344976, 0x5f7896, 0x637383,
+  0x272f3e, 0x1c2439, 0x1c2120, 0x20211c, 0x1e1d1a, 0x12140c, 0x171825, 0x272f3a, 0x39424b, 0x35414d, 0x243347, 0x28353d, 0x35424b, 0x3e4f57, 0x3f4c55, 0x3d494e,
+  0x393e38, 0x434c3b, 0x2d3229, 0x1b1f1f, 0x1c221e, 0x1e1f19, 0x1c1d17, 0x272b25, 0x31383b, 0x333133, 0x332d2a, 0x383d45, 0x343d4e, 0x2e3444, 0x293036, 0x353a3c
+};
+
+
+
+void init_bh1721() {
+  Wire.beginTransmission(BH1721_ADDR);
+  Wire.write(0x10);
+  Wire.endTransmission();
+}
+
+uint16_t poll_bh1721() {
+  Wire.requestFrom(BH1721_ADDR, 2);
+  uint16_t data = Wire.read() << 8;
+  data |= Wire.read();
+  return data;
+}
+
+uint16_t light_correct(uint16_t data) {
+  // data = constrain(data, 0, 1000);
+  if (data < 5) {
+    //data = map(data, 0, 5, 4, 5);
+    data = min_brightness;
+  }
+  else if (data >= 5 && data < 50) {
+    data = map(data, 0, 50, min_brightness, 7000);
+  }
+  else if (data >= 50 && data < 1000) {
+    data = map(data, 0, 1000, 7000, 20000);
+  }
+  else if (data >= 1000) {
+    data = map(data, 0, 65535, 20000, 65535);
+  }
+  return data;
+}
+
+
+uint16_t exp_function(uint16_t input) {
+
+  float scaled_input = input / 65565.0;
+  long double exponential_value = pow(scaled_input, 2.5);
+  int output = -round(exponential_value * 65565.0 - 65565);
+  return output;
+}
+
+float exp_flt_function(float input) {
+    float exponential_value = pow(input, 1.2);
+    return exponential_value;
+}
+
+void sparkle() {
+  Rgb48Color color;
+  float mapped_progress;
+  int j = random(0, arraySize);
+  if (random(0, 100) < s_chance && sparkle_dir[j] == -1) {
+    sparkle_dir[j] = map(random(0, 127), 0, 127, sparkling_speed_l, sparkling_speed_h); // assign a sparkling speed
+  }
+  for (int i = 0; i < arraySize; i++) { // assigning sparkles
+    if (sparkle_dir[i] != -1) { // if sparkle needs to be incremented
+      if (sparkle_dir[i] < 128) { // if sparkle is rising
+        sparkle_lvl[i] += sparkle_dir[i]; // increment it
+        if (sparkle_lvl[i] >= sparkling_range_h) { // if reached peak
+          sparkle_lvl[i] = sparkling_range_h; // set to peak
+          sparkle_dir[i] += 128; // change direction to be negative
+        }
+      }
+      else { // if sparkle is falling
+        sparkle_lvl[i] -= sparkle_dir[i] - 128;
+        if (sparkle_lvl[i] <= 0) { // if reached bottom
+          sparkle_lvl[i] = 0; // constrain to 0
+          sparkle_dir[i] = -1; // assign stationary
+        }
+      }
+      mapped_progress = map(sparkle_lvl[i], 0, 255, 0, 1000) / 1000.0;
+      color = Rgb48Color::LinearBlend(starry_night[i], white, mapped_progress);
+      color = color.Dim(scaled_light_level);
+      strip.SetPixelColor(i, colorGamma.Correct(color));
+    }
+  }
+}
+
+
+void setup_image() {
+  for (int i = 0; i < pixelcount; i++) {
+    Rgb48Color color(starry_night[i]);
+    color = color.Dim(scaled_light_level);
+    strip.SetPixelColor(i, colorGamma.Correct(color));
+  }
+}
+
+
+void game_of_life() {
+  // Calculate the next iteration of the Game of Life
+  for (int y = 0; y < height; y++) {
+    for (int x = 0; x < width; x++) {
+      // Count the number of live neighbors
+      int liveNeighbors = 0;
+      // Check all neighboring cells, including diagonal cells (toroidal wrap)
+      for (int i = -1; i <= 1; i++) {
+        for (int j = -1; j <= 1; j++) {
+          // Calculate the coordinates of the neighbor cell (toroidal wrap)
+          int nx = (x + j + width) % width;
+          int ny = (y + i + height) % height;
+
+          // Skip the current cell
+          if (i == 0 && j == 0) continue;
+
+          // Count live neighbors
+          if (gol_array[ny][nx] == 1) {
+            liveNeighbors++;
+          }
+        }
+      }
+
+      // Apply the rules of the Game of Life
+      if (gol_array[y][x] == 1) {
+        // Cell is alive
+        if (liveNeighbors < 2 || liveNeighbors > 3) {
+          // Cell dies due to underpopulation or overpopulation
+          gol_next_array[y][x] = 0;
+        } else {
+          // Cell survives to the next generation
+          gol_next_array[y][x] = 1;
+        }
+      } else {
+        // Cell is dead
+        if (liveNeighbors == 3) {
+          // Cell becomes alive due to reproduction
+          gol_next_array[y][x] = 1;
+        } else {
+          // Cell remains dead
+          gol_next_array[y][x] = 0;
+        }
+      }
+    }
+  }
+
+  // Update the gol_array with the next iteration
+  memcpy(gol_array, gol_next_array, sizeof(gol_array));
+  for (int i = 0; i < pixelcount; i++) {
+    old_gol_clr_array[i] = new_gol_clr_array[i]; // old array = new array's old colour
+    if (gol_array[i / width][i % width] == 0) { // if dead
+      new_gol_clr_array[i] = gol_dead_color; // dead colour (black)
+      gol_age[i] = 0; // reset live timer
+    }
+    else {
+      new_gol_clr_array[i] = gol_live_color; // alive colour
+      gol_age[i] += aging_speed; // survived another generation
+      if (gol_age[i] > 255 - aging_speed) {
+        gol_age[i] = 255 - aging_speed;
+      }
+    }
+    if ((i + 1) % 16 == 0) {
+    }
+  }
+}
+
+void game_of_life_fade() {
+  float mapped_progress = map((millis() - lastgoltime), 0, goldelay, 0, 1000) / 1000.0;
+/*  
+*   
+*/for (int i = 0; i < pixelcount; i++) {
+    Rgb48Color color = Rgb48Color::LinearBlend(old_gol_clr_array[i], new_gol_clr_array[i], exp_flt_function(mapped_progress)); // my own exp gradient
+    //Rgb48Color color = Rgb48Color::LinearBlend(old_gol_clr_array[i], new_gol_clr_array[i], mapped_progress); // native function
+    color = Rgb48Color::LinearBlend(color, gol_old_color, float(map(gol_age[i], 0, 255, 0, 1000) / 1000.0));
+    color = color.Dim(scaled_light_level);
+    strip.SetPixelColor(i, colorGamma.Correct(color));
+  }
+}
+
+void buttonread() {
+  if (!digitalRead(switchpin) && (millis() - lastDebounceTime) > debounceDelay) {
+    lastDebounceTime = millis();
+    active_mode++;
+    setup_flag = 1;
+    if (active_mode > mode_num) {
+      active_mode = 1;
+    }
+  }
+}
+
+void fps_count() {
+  if (current_time - lastMillis > 1000) {
+    Serial.print("FPS:");
+    Serial.println(loops);
+    lastMillis = current_time;
+    loops = 0;
+  }
+  loops++;
+}
+
+void setup()
+{
+  strip.Begin();
+  strip.Show();
+  Wire.begin();
+  init_bh1721(); // initialise BH1721 to begin autoresolution measurements (0x10)
+  Serial.begin(115200);
+  Serial.println();
+  pinMode(switchpin, INPUT_PULLUP);
+
+  // Initialize the gol_array
+  randomSeed(analogRead(25)); // noise on pin 25 to generate true randomness
+  for (int i = 0; i < height; i++) {
+    for (int j = 0; j < width; j++) {
+      gol_array[i][j] = random(0, 2);
+    }
+  }
+
+
+  // initialise arrays
+  for (int i = 0; i < arraySize; i++) {
+    sparkle_dir[i] = -1;
+    old_gol_clr_array[i] = gol_dead_color;
+    new_gol_clr_array[i] = gol_dead_color;
+    sparkle_lvl[i] = 0;
+  }
+}
+
+void loop()
+{
+  current_time = millis();
+  // fps_count();
+  buttonread();
+
+
+  if ((current_time - previous_light_reading) > light_poll_delay) {
+    current_light_level = poll_bh1721(); // read BH1721
+    previous_light_reading = current_time;
+
+  }
+  scaled_light_level = light_correct(current_light_level);
+  switch (active_mode) {
+    case 1:
+      if ((current_time - lastgoltime) > goldelay) { // wait x seconds
+        lastgoltime = current_time; // if reached, generate
+        game_of_life(); // next iteration of GOL
+      }
+      game_of_life_fade(); // animation
+      break;
+    case 2:
+      setup_image();
+      sparkle();
+      break;
+  }
+  strip.Show();
+}</code></pre></div></div>
+
+
+
+
+
+
+
+
+
+
+          <button title="Toggle Theme" class="theme-toggle">
+  <svg viewBox="0 0 32 32" width="24" height="24" fill="currentcolor">
+    <circle cx="16" cy="16" r="14" fill="none" stroke="currentcolor" stroke-width="4"></circle>
+    <path d="
+             M 16 0
+             A 16 16 0 0 0 16 32
+             z">
+    </path>
+  </svg>
+</button>
+
+        
+        <div class="credits">&copy;&nbsp;2023&nbsp;fishychair
+          &nbsp;
+        </div>
+      </div>
+    </main><script async defer src="https://sdk.soopr.co/soopr.js"></script>
+    <script src="assets/scripts/prism.js"></script>
+  </body>
+</html>
