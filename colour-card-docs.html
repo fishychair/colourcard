@@ -26,9 +26,6 @@
 <meta name="twitter:creator" content="@fishychair" />
 <script type="application/ld+json">
 {"headline":"fishychair","author":{"@type":"Person","name":"fishychair"},"url":"http://localhost:4000/","@type":"WebSite","description":"fishychair".","name":"fishychair","@context":"https://schema.org"}</script>
-<script async defer data-soopr-token="" src="https://sdk.soopr.co/soopr.js"  ></script>
-<!-- End Jekyll SEO tag -->
-<script async defer data-soopr-token="" src="https://sdk.soopr.co/soopr.js"  ></script>
 <script type="text/javascript">
   function InitCopyPaste(){
     const codeBlocks = document.querySelectorAll("div.highlighter-rouge");
@@ -251,7 +248,7 @@ const int pixelcount = 144;       // 144 total LEDs on board
 const Rgb48Color defined_colour(150, 100, 0); // define a colour
 const Rgb48Color black(0);                    // define black
 
-NeoPixelBus<NeoGrbWs2816Feature, NeoWs2816Method> strip(pixelcount, pixelpin); 
+NeoPixelBus&#60;NeoGrbWs2816Feature, NeoWs2816Method> strip(pixelcount, pixelpin);
 
 void setup()
 {
